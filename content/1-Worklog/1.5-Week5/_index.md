@@ -5,54 +5,41 @@ chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 ### Week 5 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+- Complete Lab 10, 19
+- Translate AWS Blogs
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task               | Start Date | Completion Date | Reference Sources                                                                                                                                                   |
+| --- | ------------------ | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2   | - Complete Lab 10  | 06/10/2025 | 06/10/2025      | [Lab10](https://000010.awsstudygroup.com/)                                                                                                                          |
+| 3   | - Complete Lab 19  | 07/10/2025 | 07/10/2025      | [Lab19](https://000019.awsstudygroup.com/)                                                                                                                          |
+| 4   | - Translate Blog 1 | 08/10/2025 | 08/10/2025      | [Blog 1](https://aws.amazon.com/vi/blogs/big-data/enhance-governance-with-metadata-enforcement-rules-in-amazon-sagemaker/)                                          |
+| 5   | - Translate Blog 2 | 09/10/2025 | 09/10/2025      | [Blog 2](https://aws.amazon.com/blogs/devops/extend-the-amazon-q-developer-cli-with-mcp/)                                                                           |
+| 6   | - Translate Blog 3 | 10/10/2025 | 10/10/2025      | [Blog 3](https://aws.amazon.com/blogs/awsforsap/enhance-resiliency-and-data-protection-for-sap-hana-high-availability-deployments-with-amazon-backup-for-sap-hana/) |
 
 ### Week 5 Achievements:
 
-- Understood what AWS is and mastered the basic service groups:
+- Completed Lab 10 with the following outcomes:
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+  - Received an overview of the AWS CloudFormation service.
+  - Gained hands-on practice by building a template, updating a Security Group (SG), and accessing an EC2 instance through a Remote Desktop Gateway Server (RDGW).
+  - Worked on setting up a Directory Service.
 
-- Successfully created and configured an AWS Free Tier account.
+- Explored Route 53 functionality:
 
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  - Configured a Route 53 Outbound Endpoint.
+  - Created DNS Resolver Rules.
+  - Set up an Inbound Endpoint for Route 53.
+  - Verified that all connections were working correctly afterward.
+  - Successfully established communication between an on-premises environment and the AWS cloud using Directory Service and a Remote Desktop Gateway Server.
 
-- Installed and configured AWS CLI on the computer, including:
-
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
-
-- Used AWS CLI to perform basic operations such as:
-
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
-
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+- Completed Lab 19 with the following achievements:
+  - Understood the concept of VPC isolation and the purpose of establishing VPC Peering for secure, private communication between VPCs.
+  - Successfully configured a VPC Peering connection between two VPCs to enable direct traffic routing via private IP.
+  - Practiced working with Network ACLs as subnet-level stateless firewalls and updated ACL rules to allow required traffic.
+  - Implemented routing updates in Route Tables to enable bidirectional communication between the two VPCs.
+  - Configured Cross-Peer DNS to allow resources in each VPC to resolve DNS names across the peering connection.
+  - Completed the full workflow: preparation → updating Network ACLs → creating the Peering connection → configuring route tables → enabling Cross-Peer DNS.

@@ -6,7 +6,7 @@ pre: " <b> 6. </b> "
 ---
 
 Trong suốt thời gian thực tập tại **CÔNG TY TNHH AWS VIỆT NAM** từ **08/09/2025** đến **12/12/2025**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia **DocuVerse Platform**, qua đó cải thiện kỹ năng **lập trình, phân tích, viết báo cáo, giao tiếp…**.
+Tôi đã tham gia **SnapResume project**, qua đó cải thiện kỹ năng **lập trình, phân tích, viết báo cáo, giao tiếp…**.
 
 Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
 

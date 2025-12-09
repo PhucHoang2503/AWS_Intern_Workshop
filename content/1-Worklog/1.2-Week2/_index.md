@@ -5,54 +5,57 @@ chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 ### Week 2 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+- Finish Module 1 and Create AWS Account
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                       | Start Date | Completion Date | Reference Sources                                                                                                                       |
+| :-- | :----------------------------------------- | :--------- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| 2   | &emsp; Module 01 - 04                      | 15/9/2025  | 15/9/2025       | [Module 01 - 04](https://www.youtube.com/watch?v=pjr5a-HYAjI&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=7&ab_channel=AWSStudyGroup)  |
+| 3   | &emsp; Module 01 - 05                      | 16/9/2025  | 16/9/2025       | [Module 01 - 05](https://www.youtube.com/watch?v=2PQYqH_HkXw&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=8&ab_channel=AWSStudyGroup)  |
+| 4   | &emsp; Module 01 - 06                      | 17/9/2025  | 17/9/2025       | [Module 01 - 06](https://www.youtube.com/watch?v=IY61YlmXQe8&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=9&ab_channel=AWSStudyGroup)  |
+| 5   | &emsp; Module 01 - 07                      | 18/9/2025  | 18/9/2025       | [Module 01 - 07](https://www.youtube.com/watch?v=Hku7exDBURo&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=10&ab_channel=AWSStudyGroup) |
+| 6   | &emsp; Complete Lab 01: Create AWS Account | 19/9/2025  | 19/9/2025       | [Lab01](https://000001.awsstudygroup.com/1-create-new-aws-account/)                                                                     |
 
 ### Week 2 Achievements:
 
-- Understood what AWS is and mastered the basic service groups:
+- Finish Module 1
+- Gained knowledge of the AWS Global Infrastructure, including:
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+  - Data Centers
+  - Availability Zones (AZs)
+  - Regions (a region comprises a minimum of 3 AZs)
+  - Edge Locations
+    - CloudFront
+    - WAF (Web Application Firewall)
+    - Route 53
 
-- Successfully created and configured an AWS Free Tier account.
+- Explored AWS management tools:
 
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  - AWS Console - Root Login
+  - AWS Management Console - IAM Login
+  - Management Console - Service Search
+  - Management Console - Support Center
+  - AWS Command Line Interface (CLI)
+  - AWS SDKs (Software Development Kits)
 
-- Installed and configured AWS CLI on the computer, including:
+- Learned about cost optimization methods when using AWS services:
 
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
+  - Leveraging discounted pricing models:
+    - Reserved Instances
+    - Savings Plans
+    - Spot Instances
+    - Practiced creating an AWS account.
+    - Conducted supplementary research on the AWS Well-Architected Framework.
 
-- Used AWS CLI to perform basic operations such as:
+- Successfully created and configured an AWS Free Tier account:
 
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
+  - Set up MFA (Multi-Factor Authentication) for the root account.
+  - Familiarized myself with creating an Admin Group and an Admin User.
 
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+- Configured authentication for the Admin User by:
+
+  - Generating an Access Key.
+  - Managing the Secret Key (creation/deletion).

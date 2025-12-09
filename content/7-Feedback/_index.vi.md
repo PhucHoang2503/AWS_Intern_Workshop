@@ -29,7 +29,7 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 - Điều bạn **hài lòng nhất** trong thời gian thực tập?
 
-* Giờ giấc thực tập
+* Giờ giấc thực tập, sự nhiệt huyết của các mentor
 
 - Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?
 
@@ -43,8 +43,10 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?
 
-* Không
+* Không ạ
 
 - Bạn có muốn tiếp tục chương trình này trong tương lai?
 
-* Không
+* Có ạ
+
+- Góp ý khác (tự do chia sẻ):

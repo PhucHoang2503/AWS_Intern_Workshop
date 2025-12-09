@@ -5,54 +5,42 @@ chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 ### Mục tiêu tuần 5:
 
-- Kết nối, làm quen với các thành viên trong First Cloud Journey.
-- Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Hoàn thành Lab 10, 19
+- Biên dịch Blog của AWS
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                | Start Date | Completion Date | Reference Sources                                                                                                                                                   |
+| --- | ------------------- | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2   | - Hoàn thành Lab 10 | 06/10/2025 | 06/10/2025      | [Lab10](https://000010.awsstudygroup.com/)                                                                                                                          |
+| 3   | - Hoàn thành Lab 19 | 07/10/2025 | 07/10/2025      | [Lab19](https://000019.awsstudygroup.com/)                                                                                                                          |
+| 4   | - Biên dịch Blog 1  | 08/10/2025 | 08/10/2025      | [Blog 1](https://aws.amazon.com/vi/blogs/big-data/enhance-governance-with-metadata-enforcement-rules-in-amazon-sagemaker/)                                          |
+| 5   | - Biên dịch Blog 2  | 09/10/2025 | 09/10/2025      | [Blog 2](https://aws.amazon.com/blogs/devops/extend-the-amazon-q-developer-cli-with-mcp/)                                                                           |
+| 6   | - Biên dịch Blog 3  | 10/10/2025 | 10/10/2025      | [Blog 3](https://aws.amazon.com/blogs/awsforsap/enhance-resiliency-and-data-protection-for-sap-hana-high-availability-deployments-with-amazon-backup-for-sap-hana/) |
 
 ### Kết quả đạt được tuần 5:
 
-- Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
+- Hoàn thành Lab 10 với các kết quả sau:
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+  - Được giới thiệu tổng quan về dịch vụ AWS CloudFormation.
+  - Thực hành tạo template, chỉnh sửa Security Group (SG), và truy cập EC2 thông qua Remote Desktop Gateway Server (RDGW).
+  - Thực hành cấu hình Directory Service.
 
-- Đã tạo và cấu hình AWS Free Tier account thành công.
+- Tìm hiểu các chức năng của Route 53:
 
-- Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+  - Thiết lập Outbound Endpoint cho Route 53.
+  - Tạo DNS Resolver Rules.
+  - Cấu hình Inbound Endpoint cho Route 53.
+  - Kiểm tra và xác nhận kết nối hoạt động thành công sau khi cấu hình.
+  - Thiết lập thành công kết nối giữa hệ thống on-premises và môi trường AWS thông qua Directory Service và Remote Desktop Gateway Server.
 
-- Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
+- Hoàn thành Lab 19 với các kết quả sau:
 
-  - Access Key
-  - Secret Key
-  - Region mặc định
-  - ...
-
-- Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  - Kiểm tra thông tin tài khoản & cấu hình
-  - Lấy danh sách region
-  - Xem dịch vụ EC2
-  - Tạo và quản lý key pair
-  - Kiểm tra thông tin dịch vụ đang chạy
-  - ...
-
-- Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-- ...
+  - Hiểu được cơ chế VPC hoạt động độc lập và mục tiêu của VPC Peering để cho phép hai VPC giao tiếp an toàn qua địa chỉ private.
+  - Thiết lập thành công kết nối VPC Peering giữa hai VPC, cho phép định tuyến traffic trực tiếp mà không đi qua Internet công cộng.
+  - Thực hành cấu hình Network ACL như một lớp firewall stateless ở cấp độ subnet và cập nhật rule để cho phép lưu lượng cần thiết.
+  - Cập nhật Route Tables để hỗ trợ giao tiếp hai chiều giữa hai VPC.
+  - Cấu hình Cross-Peer DNS giúp các tài nguyên ở mỗi VPC phân giải DNS của nhau thông qua kết nối Peering.
+  - Hoàn tất toàn bộ quy trình: chuẩn bị → cấu hình Network ACL → tạo kết nối Peering → cập nhật route tables → thiết lập Cross-Peer DNS.

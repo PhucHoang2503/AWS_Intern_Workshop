@@ -5,54 +5,57 @@ chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 ### Week 3 Objectives:
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+- Finish Module 2
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                         | Start Date | Completion Date | Reference Source                                                                                               |
+| --- | ---------------------------- | ---------- | --------------- | -------------------------------------------------------------------------------------------------------------- |
+| Mon | &emsp; Module 02 - 01        | 22/9/2025  | 22/9/2025       | [Module 02 - 01](https://www.youtube.com/watch?v=O9Ac_vGHquM&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=26) |
+| Tue | &emsp; Module 02 - 02        | 23/9/2025  | 23/9/2025       | [Module 02 - 02](https://www.youtube.com/watch?v=BPuD1l2hEQ4&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=26) |
+| Wed | &emsp; Module 02 - 03        | 24/9/2025  | 24/9/2025       | [Module 02 - 03](https://www.youtube.com/watch?v=CXU8D3kyxIc&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=27) |
+| Thu | Design appication with Figma | 25/9/2025  | 25/9/2025       |                                                                                                                |
+| Fri | Design appication with Figma | 26/9/2025  | 26/9/2025       |                                                                                                                |
 
 ### Week 3 Achievements:
 
-- Understood what AWS is and mastered the basic service groups:
+- Explored, reviewed, and gained a solid grasp of VPC concepts
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+- Developed a clearer understanding of subnet types: public subnets and private subnets
 
-- Successfully created and configured an AWS Free Tier account.
+- Studied various VPC-related components and services:
 
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  - Route Tables
+  - Elastic Network Interfaces (ENIs)
+  - Elastic IP Addresses (EIPs)
+  - Internet Gateway
+  - NAT Gateway
 
-- Installed and configured AWS CLI on the computer, including:
+- Examined security mechanisms within VPC:
 
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
+  - Security Groups
+  - Network Access Control Lists (NACLs)
+  - VPC Peering connections
+  - VPC Flow Logs
+  - Transit Gateway
 
-- Used AWS CLI to perform basic operations such as:
+- Learned about connectivity options between on-premises/data center infrastructures and AWS:
 
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
+  - Site-to-Site VPN
+  - AWS Direct Connect
 
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+- Studied the Elastic Load Balancing (ELB) service:
+
+  - Session stickiness (Sticky Sessions)
+  - Application Load Balancer (ALB)
+  - Network Load Balancer (NLB)
+  - Classic Load Balancer
+  - Gateway Load Balancer
+
+- Gained knowledge of VPC Endpoints:
+  - Understood their core purpose and functionality
+- Learned about the two main types of endpoints:
+  - Interface Endpoints
+  - Gateway Endpoints
