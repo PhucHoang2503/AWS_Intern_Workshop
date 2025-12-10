@@ -1,6 +1,6 @@
 baseURL = "https://phuchoang2503.github.io/AWS_Intern_Workshop/"
-relativeURLs = false
-canonifyURLs = false
+relativeURLs = true
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo

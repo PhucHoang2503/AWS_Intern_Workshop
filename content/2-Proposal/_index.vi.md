@@ -33,7 +33,7 @@ SnapResume giải quyết các vấn đề này bằng một ứng dụng web `R
 ### 3. Kiến trúc Giải pháp
 
 Hệ thống sử dụng kiến trúc `Serverless` và `Event-driven` trên `AWS`.
-![AWS Architecture](/static/images/2-Proposal/SnapResume.png)
+![AWS Architecture](/images/2-Proposal/SnapResume.png)
 
 #### Tổng quan Kiến trúc
 

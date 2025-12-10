@@ -33,7 +33,7 @@ SnapResume solves these problems using a modern `React` web application built on
 ### 3. Solution Architecture
 
 The system uses a `Serverless` and `Event-driven` architecture on AWS.
-![AWS Architecture](/static/images/2-Proposal/SnapResume.png)
+![AWS Architecture](/images/2-Proposal/SnapResume.png)
 
 #### Architecture Overview
 
