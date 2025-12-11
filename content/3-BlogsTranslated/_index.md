@@ -15,7 +15,7 @@ This blog shows how metadata enforcement rules in Amazon SageMaker improve data 
 
 This blog introduces how to build a resilient backup architecture for SAP HANA High-Availability deployments on AWS using AWS Backup. You will learn why backups are still essential beyond HA—for protection against corruption, errors, ransomware, and compliance needs—and how AWS Backup provides automated, consistent, and scalable data protection. The article also walks through setting up the environment, running backup/restore operations in a Pacemaker cluster, and applying best practices for performance, monitoring, disaster recovery, and governance to ensure secure and reliable SAP HANA operations on AWS.
 
-**https://aws.amazon.com/blogs/awsforsapenhance-resiliency-and-data-protection-for-sap-hana-high-availability-deployments-with-amazon-backup-for-sap-hana/**
+**https://aws.amazon.com/blogs/awsforsap/enhance-resiliency-and-data-protection-for-sap-hana-high-availability-deployments-with-amazon-backup-for-sap-hana/**
 
 ### [Blog 3 - Extend the Amazon Q Developer CLI with Model Context Protocol (MCP) for Richer Context](3.3-Blog3/)
 

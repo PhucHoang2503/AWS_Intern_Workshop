@@ -1,20 +1,22 @@
 ---
-title: "Introduction"
-weight: 1
-chapter: false
-pre: " <b> 5.1. </b> "
+title : "1. Workshop Overview"
+date: 2025-09-09
+weight : 1
+chapter : false
+pre : " <b> 5.1. </b> "
 ---
 
-#### VPC endpoints
+#### Hands-on workshop Overview
 
-- **VPC endpoints** are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. They allow communication between your compute resources and AWS services without imposing availability risks.
-- Compute resources running in VPC can access **Amazon S3** using a Gateway endpoint. PrivateLink interface endpoints can be used by compute resources running in VPC or on-premises.
+In this workshop, we will practice deploying a static website on **Amazon S3** storage service and optimizing content delivery via **Amazon CloudFront** Content Delivery Network (CDN).
 
-#### Workshop overview
+#### Key Contents:
 
-In this workshop, you will use two VPCs.
-
-- **"VPC Cloud"** is for cloud resources such as a **Gateway endpoint** and an EC2 instance to test with.
-- **"VPC On-Prem"** simulates an on-premises environment such as a factory or corporate datacenter. An EC2 instance running strongSwan VPN software has been deployed in "VPC On-prem" and automatically configured to establish a Site-to-Site VPN tunnel with AWS Transit Gateway. This VPN simulates connectivity from an on-premises location to the AWS cloud. To minimize costs, only one VPN instance is provisioned to support this workshop. When planning VPN connectivity for your production workloads, AWS recommends using multiple VPN devices for high availability.
-
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+1.  **Preparation (5.2)**: Create an S3 Bucket and upload sample website source code to the bucket.
+2.  **Configure S3 Static Hosting (5.3)**: Enable static website hosting feature on S3.
+3.  **Access Management (5.4 - 5.5)**: Configure *Block Public Access* and *Access Control Lists (ACL)* to allow users to access the website from the internet.
+4.  **Verify Website (5.6)**: Verify the website operation via the S3 Endpoint.
+5.  **CloudFront Integration (5.7)**:
+    -   Initialize a CloudFront Distribution pointing to the S3 origin.
+    -   Enhance security by blocking direct public access to S3 (Block Public Access) and routing traffic through CloudFront.
+6.  **Cleanup (5.8)**: Instructions on deleting created resources to avoid incurring costs.

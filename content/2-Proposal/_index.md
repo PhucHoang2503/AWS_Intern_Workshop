@@ -1,5 +1,6 @@
 ---
 title: "Proposal"
+date: 2025-09-09
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -7,118 +8,145 @@ pre: " <b> 2. </b> "
 
 # SnapResume Platform
 
-### 1. Project Summary
+## 1\. Project Summary
 
-**SnapResume** is an intelligent resume/CV building platform powered by AI, helping job seekers create professional, ATS-friendly (Applicant Tracking System) resumes quickly and efficiently. The platform provides modern design templates, an intuitive editor, and an AI assistant to optimize content, fix grammar, and suggest keywords relevant to job descriptions.
+SnapResume is an intelligent, AI-powered resume-building platform designed to help job seekers create professional, ATS (Applicant Tracking System) compliant resumes quickly and efficiently. The platform offers modern design templates, intuitive editing tools, and a smart recommendation system that optimizes content to match job descriptions.
 
-Its key differentiator is the integration of AI content generation (`GenAI`) using `AWS Bedrock` (`Claude 3 Sonnet`), allowing users to produce professional summaries and impressive experience descriptions from only basic bullet points. The system is fully built on a `Serverless` architecture, ensuring infinite scalability and optimized cost.
+The key differentiator is the integration of an AI Search & Recommendation Engine using **AWS Bedrock** (Claude 3 Sonnet). This allows the system to automatically analyze job descriptions and suggest the most relevant resume sections from the user's experience data repository. The system is built entirely on a Serverless architecture, ensuring infinite scalability and optimized costs.
 
-### 2. Problem Statement
+## 2\. Problem Statement
 
-#### What is the problem?
+### What is the problem?
 
-- **Difficult formatting**: Job seekers spend hours formatting text in `Word` or complex design tools but still fail to achieve a professional look.
-- **Weak content**: Candidates struggle to write concise content, use industry terminology, and highlight achievements. “Writer’s block” is extremely common.
-- **Fails ATS screening**: Manually designed resumes often contain graphics or table structures that employer ATS systems cannot parse.
+- **Formatting Difficulties:** Job seekers often spend hours formatting text in Word or complex design tools without achieving a professional look.
+- **Difficulty in Selecting Information:** Candidates often have extensive experience but struggle to select what is most relevant to a specific position. Sending a "generic" CV to every company reduces the chance of acceptance.
+- **ATS Rejection:** Manually designed resumes often contain graphic elements or table structures that make them unreadable to employers' automated Applicant Tracking Systems (ATS).
 
-#### The Solution
+### The Solution
 
-SnapResume solves these problems using a modern `React` web application built on `AWS Serverless`.
+SnapResume addresses these issues with a modern React web application built on the AWS Serverless platform.
 
-- **Visual editor**: Drag-and-drop UI or simple form-based input with real-time preview.
-- **AI Copilot**: Uses `AWS Bedrock` to rewrite sentences and generate content tailored to the job role.
-- **ATS-Friendly**: Templates designed to remain machine-readable while still visually appealing.
-- **Centralized management**: Store multiple resume versions and export high-quality `PDF`.
+- **Visual Editor:** Simple drag-and-drop or form-filling interface with Real-time Preview.
+- **AI Smart Matcher:** Uses **AWS Bedrock** to analyze the relevance between the candidate's experience and job requirements, thereby recommending a list of skills and projects to include in the CV.
+- **ATS Compliant:** Templates are designed to be machine-friendly while remaining aesthetically pleasing for human readers.
+- **Centralized Management:** Stores a library of sections and allows for "assembling" multiple resume versions based on specific needs.
 
-### 3. Solution Architecture
+## 3\. Solution Architecture
 
-The system uses a `Serverless` and `Event-driven` architecture on AWS.
+The system utilizes Serverless and Event-driven architecture on AWS.
 ![AWS Architecture](/images/2-Proposal/SnapResume.png)
 
-#### Architecture Overview
+### Architecture Overview
 
-- **Frontend**: `React 19` + `Vite` (hosted on `S3` + `CloudFront` or `AWS Amplify`).
-- **API Layer**: `Amazon API Gateway` + `AWS Lambda` (`Node.js`/`Express`).
-- **Database**: `Amazon DynamoDB` (Single Table Design) storing `User`, `Resume`, `Section`, `Template`.
-- **Authentication**: `Amazon Cognito` (User Pools & Identity Pools).
-- **AI Engine**: `Amazon Bedrock` (`Claude 3 Sonnet`) for content generation.
-- **Storage**: `Amazon S3` for storing profile images and exported `PDF` files.
+- **Frontend:** React + Vite + Ant Design (hosted on Amplify and accelerated via CloudFront).
+- **API Layer:** Amazon API Gateway + AWS Lambda (Node.js/TypeScript).
+- **Database:** Amazon DynamoDB for storing Users, Resumes, Sections, and Templates.
+- **Authentication:** Amazon Cognito (User Pools & Identity Pools).
+- **AI Engine:** Amazon Bedrock (Claude 3 Sonnet) for analysis and recommendation tasks.
+- **Storage:** Amazon S3 for storing profile pictures and PDF files.
 
-### 4. Technical Implementation
+## 4\. Technical Implementation
 
-#### Technology Stack
+### Technology Stack
 
-- **Frontend**: `ReactJS`, `TailwindCSS`, `Ant Design`, `html2pdf.js` for PDF export.
-- **Backend**: `NodeJS`, `TypeScript`, `Express` (running inside `Lambda`).
-- **IaC**: `Terraform` managing all infrastructure.
+- **Frontend:** ReactJS, Ant Design, CSS Modules, html2pdf.js for PDF export.
+- **Backend:** NodeJS, TypeScript, Express (running inside Lambda).
+- **IaC:** Terraform for managing the entire infrastructure.
 
-#### Development Phases
+### Phases
 
-- **Phase 1: Core Foundation (January)**
-  - Set up AWS infrastructure (`Terraform`).
-  - Build Authentication (`Cognito`).
-  - Basic Resume `CRUD` (`DynamoDB` + `Lambda`).
-- **Phase 2: Editor & Templates (February)**
-  - Develop drag-and-drop Editor UI.
-  - Build dynamic Template system.
-  - PDF export (`html2pdf.js` / `Puppeteer`).
-- **Phase 3: AI Integration & Polish (March)**
-  - Integrate `Amazon Bedrock` for “AI Writer”.
-  - UX/UI optimization.
-  - Load testing & security hardening.
+1.  **Phase 1: Core Foundation** (Completed)
+    - Setup AWS Infrastructure (Terraform).
+    - Build Authentication (Cognito).
+    - Basic CRUD for Resumes & Sections (DynamoDB + Lambda).
+2.  **Phase 2: Editor & Templates** (Completed)
+    - Develop Universal Editor Interface (Extension/Web).
+    - Build Dynamic Template System.
+    - PDF Export Feature (html2pdf.js).
+3.  **Phase 3: AI Integration & Polish** (In Progress)
+    - Integrate Amazon Bedrock for "AI Recommendation" feature.
+    - Optimize UX/UI (Features Page, Editor Flow).
+    - Extension Integration (Web Clipper flow).
 
-### 5. Budget Estimation (AWS Cost)
+## 5\. Budget Estimate (AWS Costs)
 
-The `Serverless` pricing model scales with usage. AI cost (`Bedrock`) becomes a major factor compared to traditional apps.
+The Serverless pricing model ensures costs are proportional to usage. AI costs are focused on analyzing large input data (Input Tokens).
 
-#### Assumptions
+### AI Cost Assumptions
 
-- 1 Resume = 5 AI calls (optimization, rewriting descriptions).
-- 1 AI call = 1,000 input tokens + 500 output tokens.
-- `Bedrock` pricing (`Claude 3 Sonnet`): $3.00 / 1M input, $15.00 / 1M output.
-- AI cost per Resume: ~ $0.05 (≈ 1,200 VND).
-- PDF file size: 2MB.
+The estimated costs for the Amazon Bedrock service (utilizing the Claude 3 Sonnet model) are calculated based on the following _real-world usage scenario_ (MVP):
 
-| Service             | Pricing Model | Low Traffic (MVP/Test) | Medium Traffic | High Traffic          |
-| :------------------ | :------------ | :--------------------- | :------------- | :-------------------- |
-| **Scale**           |               | **< 500 users/month**  | **~5,000/mo**  | **~50,000/mo**        |
-| Resumes generated   |               | 200 CV                 | 2,000 CV       | 20,000 CV             |
-| Amazon S3           | Storage       | $0.10                  | $1.00          | $15.00                |
-| CloudFront          | CDN           | $0.50                  | $5.00          | $50.00                |
-| API GW + Lambda     | Compute       | Free Tier              | $5.00          | $40.00                |
-| DynamoDB            | Database      | Free Tier              | $2.00          | $20.00                |
-| Cognito             | Auth          | Free Tier              | Free Tier      | Free Tier (< 50k MAU) |
-| Amazon Bedrock (AI) | Tokens        | $10.00                 | $100.00        | $1,000.00             |
-| WAF + Route53       | Security      | $7.00                  | $7.00          | $15.00                |
-| **Total / Month**   |               | **~ $18**              | **~ $120**     | **~ $1,140**          |
+#### 1. Usage Frequency & Volume
 
-> Note: AI cost (`Bedrock`) becomes dominant at scale. Costs can be optimized by using smaller models such as `Claude 3 Haiku` for simple tasks, reducing AI cost to about 1/5.
+1.  **Processing Rate**: The system processes an average of 1 request per minute (1 request/minute).
+2.  **Operating Time**: The system is expected to be under high load or actively used for 2 hours/day (120 minutes/day).
+3.  **Total Monthly Volume**: 120 requests/day × 30 days = 3,600 requests/month.
 
-### 6. Risk Assessment
+#### 2. Data Size (Token Size) per Request
 
-#### Security & Privacy Risks (High)
+1.  **Input (Input Tokens)**: Average of 500 tokens/request.
+    - Includes: Data extracted from the user's current CV and the content of the Job Description to be analyzed.
+2.  **Output (Output Tokens)**: Average of 600 tokens/request.
+    - Includes: Analysis results, editing suggestions, and data returned in structured JSON format.
 
-- **Issue**: Resumes contain sensitive PII — phone number, email, address.
-- **Mitigation**:
-  - Encrypt data at rest (`DynamoDB`, `S3`).
-  - Enforce strict access permissions (`IAM Roles`).
-  - User data is not used for AI training (`AWS Bedrock` does not train on customer inputs).
+#### 3. Unit Pricing (Pricing - Claude 3 Sonnet)
 
-#### Cost Risk (Medium)
+- **Input**: $0.003 / 1,000 tokens (equivalent to $3.00 / 1 million tokens).
+- **Output**: $0.015 / 1,000 tokens (equivalent to $15.00 / 1 million tokens).
 
-- **Issue**: API `DDoS` attacks or AI abuse can incur high cost.
-- **Mitigation**:
-  - Apply throttling on `API Gateway`.
-  - Limit daily AI calls per free-tier account.
-  - Set up `AWS Budget Alerts`.
+#### AI Cost Breakdown
 
-#### Architectural Risk
+- Total Monthly Volume = Frequency _ Duration _ 30 days
+- Input Token Cost = Total Monthly Volume _ Input Tokens per Request _ ($3 / 1 million tokens)
+- Output Token Cost = Total Monthly Volume _ Output Tokens per Request _ ($15 / 1 million tokens)
+- Total Cost = Input Token Cost + Output Token Cost
 
-- **Issue**: Lambda cold start may slow first-time user experience.
-- **Mitigation**: Use `Lambda SnapStart` (for Java) or `Provisioned Concurrency` if needed (Node.js usually has fast cold start).
+##### Low traffic
 
-### 7. Expected Outcomes
+- Processing Rate: 1 request/minute
+- Operating Time: 2 hours/day
 
-- A complete `SaaS` platform targeting the recruitment market.
-- Highly scalable system supporting tens of thousands of users without server management.
-- AI integration provides a significant competitive advantage over traditional CV builders.
+##### High traffic
+
+- Processing Rate: 2 request/minute
+- Operating Time: 3 hours/day
+
+| Service                | Pricing Model | Low Traffic (MVP) | Medium Traffic |
+| :--------------------- | :------------ | :---------------- | :------------- |
+| Amazon S3              | Storage       | $0.28             | $0.77          |
+| CloudFront             | CDN           | Free Tier         | Free Tier      |
+| API GW + Lambda        | Compute       | Free Tier         | $2.80          |
+| DynamoDB               | Database      | Free Tier         | $6.25          |
+| Cognito                | Auth          | Free Tier         | Free Tier      |
+| Amazon Bedrock (AI)    | Tokens        | $37.8             | $113.4         |
+| WAF + Route53          | Security      | $12.60            | $12.60         |
+| **Total Cost / Month** |               | **\~ $50.68**     | **\~ $135.82** |
+
+## 6\. Risk Assessment
+
+### Security & Privacy Risks (High)
+
+- **Issue:** The Recommendation feature requires sending the user's entire Section data to Bedrock for analysis.
+- **Mitigation:**
+  - AWS Bedrock complies with regulations ensuring customer data is not used to train base models.
+  - Data encryption at rest in DynamoDB.
+
+### Cost Risks (Medium)
+
+- **Issue:** Users spamming the "Recommend" button with long Job Descriptions causing high Input Token usage.
+- **Mitigation:**
+  - Limit the length of Job Description Input.
+  - Implement Quota limits (e.g., 10 analysis calls/day for Free accounts).
+
+### Architectural Risks (Low)
+
+- **Issue:** Lambda cold starts slowing down the initial user experience.
+- **Mitigation:** Use Lambda SnapStart (for Java) or Provisioned Concurrency if necessary (though Node.js cold starts are generally quite fast).
+
+## 7\. Expected Outcomes
+
+- Ownership of a complete SaaS platform for the recruitment market.
+- Solving the "Matching" problem between candidates and jobs, rather than being just a pure text editing tool.
+- Leveraging AWS AI power to create real value (Smart Search) instead of generic "writing assistance" features.
+
+[Attached Documents](https://drive.google.com/drive/folders/1zQJ8XC6bdMWveQYIaCO-RkHh9Ppy1WyE?usp=sharing)

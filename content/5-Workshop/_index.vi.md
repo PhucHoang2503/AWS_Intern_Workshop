@@ -1,32 +1,28 @@
 ---
-title: "Workshop"
+title: "Workshop 5: S3 Static Website & CloudFront"
+date: 2025-09-09
 weight: 5
-chapter: false
+chapter: true
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# S3 Static Website & CloudFront Hosting System
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+Trong workshop này, chúng ta sẽ xây dựng một hệ thống lưu trữ và phân phối website tĩnh sử dụng **Amazon S3** và **Amazon CloudFront**.
 
-#### Tổng quan
+#### Kiến trúc hệ thống
+Hệ thống bao gồm các thành phần chính:
+1.  **Amazon S3 Bucket**: Lưu trữ mã nguồn website (HTML, CSS, JS, Images). Được cấu hình tính năng **Static Website Hosting**.
+2.  **Amazon CloudFront**: Mạng phân phối nội dung (CDN) giúp tăng tốc độ truy cập website cho người dùng toàn cầu và giảm tải cho S3.
+3.  **Bảo mật**: Quản lý quyền truy cập thông qua **Block Public Access** và **Bucket Policies/ACLs**.
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+#### Nội dung Workshop
+Các bài thực hành được chia thành các phần nhỏ để bạn dễ dàng theo dõi:
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
-
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-
-- **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-- **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
-
-#### Nội dung
-
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1.  **[Giới thiệu (5.1)](./5.1-workshop-overview)**: Tổng quan về workshop và các dịch vụ sử dụng.
+2.  **[Chuẩn bị (5.2)](./5.2-prerequiste)**: Tạo S3 Bucket và tải lên mã nguồn website du lịch mẫu.
+3.  **[Cấu hình S3 Hosting (5.3)](./5.3-s3-static-web)**: Bật tính năng Static Website Hosting trên bucket.
+4.  **[Cấu hình Bảo mật (5.4 - 5.5)](./5.4-config-block-public)**: Cấu hình `Block Public Access` và `ACL` để công khai website.
+5.  **[Kiểm tra Website (5.6)](./5.6-check-website)**: Truy cập website thông qua S3 Endpoint.
+6.  **[Tích hợp CloudFront (5.7)](./5.7-cloudfront)**: Triển khai CDN CloudFront để phân phối nội dung website.
+7.  **[Dọn dẹp (5.8)](./5.8-cleanup)**: Xóa tài nguyên để tránh phát sinh chi phí.

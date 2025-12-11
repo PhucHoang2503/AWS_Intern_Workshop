@@ -1,5 +1,6 @@
 ---
 title: "Đề xuất Dự án"
+date: 2025-09-09
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -7,118 +8,145 @@ pre: " <b> 2. </b> "
 
 # Nền tảng SnapResume
 
-### 1. Tóm tắt Dự án
+## 1. Tóm tắt Dự án
 
-**SnapResume** là một nền tảng xây dựng hồ sơ năng lực (CV/Resume) thông minh, được hỗ trợ bởi AI, giúp người tìm việc tạo ra các hồ sơ chuyên nghiệp, chuẩn `ATS` (Applicant Tracking System) một cách nhanh chóng và hiệu quả. Nền tảng cung cấp các mẫu thiết kế hiện đại, công cụ chỉnh sửa trực quan và trợ lý AI để tối ưu hóa nội dung, sửa lỗi ngữ pháp và gợi ý từ khóa phù hợp với mô tả công việc.
+SnapResume là một nền tảng xây dựng hồ sơ năng lực (CV/Resume) thông minh, được hỗ trợ bởi AI, giúp người tìm việc tạo ra các hồ sơ chuyên nghiệp, chuẩn ATS (Applicant Tracking System) một cách nhanh chóng và hiệu quả. Nền tảng cung cấp các mẫu thiết kế hiện đại, công cụ chỉnh sửa trực quan và hệ thống đề xuất thông minh giúp tối ưu hóa nội dung phù hợp với mô tả công việc.
 
-Điểm khác biệt chính là việc tích hợp Sáng tạo nội dung bằng AI (`GenAI`) sử dụng `AWS Bedrock` (`Claude 3 Sonnet`), cho phép người dùng tạo ra các bản tóm tắt chuyên nghiệp, mô tả kinh nghiệm làm việc ấn tượng chỉ từ những gạch đầu dòng cơ bản. Hệ thống được xây dựng hoàn toàn trên kiến trúc `Serverless`, đảm bảo khả năng mở rộng vô hạn và chi phí tối ưu.
+Điểm khác biệt chính là việc tích hợp Công cụ Tìm kiếm & Đề xuất bằng AI sử dụng **AWS Bedrock** (Claude 3 Sonnet), cho phép hệ thống tự động phân tích mô tả công việc và đề xuất các phần hồ sơ phù hợp nhất từ kho dữ liệu kinh nghiệm của người dùng. Hệ thống được xây dựng hoàn toàn trên kiến trúc Serverless, đảm bảo khả năng mở rộng vô hạn và chi phí tối ưu.
 
-### 2. Bài toán Cần giải quyết
+## 2. Bài toán Cần giải quyết
 
-#### Vấn đề là gì?
+### Vấn đề là gì?
 
-- **Khó khăn trong Trình bày**: Người tìm việc thường mất hàng giờ để định dạng văn bản trong `Word` hoặc các công cụ thiết kế phức tạp mà vẫn không đạt được vẻ ngoài chuyên nghiệp.
-- **Nội dung kém thu hút**: Ứng viên gặp khó khăn trong việc viết nội dung cô đọng, sử dụng từ ngữ chuyên ngành và làm nổi bật thành tích của mình. "Writer's block" (bí ý tưởng) là vấn đề phổ biến.
-- **Không vượt qua được ATS**: Các CV thiết kế thủ công thường chứa các yếu tố đồ họa hoặc cấu trúc bảng biểu khiến hệ thống quét hồ sơ tự động (`ATS`) của nhà tuyển dụng không thể đọc được nội dung.
+- **Khó khăn trong Trình bày**: Người tìm việc thường mất hàng giờ để định dạng văn bản trong Word hoặc các công cụ thiết kế phức tạp mà vẫn không đạt được vẻ ngoài chuyên nghiệp.
+- **Khó khăn trong chọn lọc thông tin**: Ứng viên thường có nhiều kinh nghiệm nhưng không biết chọn lọc những gì liên quan nhất đến vị trí ứng tuyển cụ thể. Việc gửi một CV "chung chung" cho mọi công ty làm giảm cơ hội trúng tuyển.
+- **Không vượt qua được ATS**: Các CV thiết kế thủ công thường chứa các yếu tố đồ họa hoặc cấu trúc bảng biểu khiến hệ thống quét hồ sơ tự động (ATS) của nhà tuyển dụng không thể đọc được nội dung.
 
-#### Giải pháp
+### Giải pháp
 
-SnapResume giải quyết các vấn đề này bằng một ứng dụng web `React` hiện đại trên nền tảng `AWS Serverless`.
+SnapResume giải quyết các vấn đề này bằng một ứng dụng web React hiện đại trên nền tảng AWS Serverless.
 
-- **Trình chỉnh sửa trực quan**: Giao diện kéo thả hoặc điền biểu mẫu đơn giản, xem trước thời gian thực (`Real-time Preview`).
-- **AI Copilot**: Sử dụng `AWS Bedrock` để tự động viết lại câu, đề xuất nội dung dựa trên vị trí ứng tuyển.
-- **Chuẩn ATS**: Các mẫu (`Templates`) được thiết kế để thân thiện với máy đọc nhưng vẫn đẹp mắt với người đọc.
-- **Quản lý tập trung**: Lưu trữ nhiều phiên bản CV, xuất ra `PDF` chất lượng cao.
+- **Trình chỉnh sửa trực quan**: Giao diện kéo thả hoặc điền biểu mẫu đơn giản, xem trước thời gian thực (Real-time Preview).
+- **AI Smart Matcher**: Sử dụng **AWS Bedrock** để phân tích độ phù hợp giữa kinh nghiệm của ứng viên và yêu cầu công việc, từ đó đề xuất danh sách các kỹ năng và dự án nên đưa vào CV.
+- **Chuẩn ATS**: Các mẫu được thiết kế để thân thiện với máy đọc nhưng vẫn đẹp mắt với người đọc.
+- **Quản lý tập trung**: Lưu trữ thư viện các sections và cho phép "lắp ghép" thành nhiều phiên bản CV khác nhau tùy theo nhu cầu.
 
-### 3. Kiến trúc Giải pháp
+## 3. Kiến trúc Giải pháp
 
-Hệ thống sử dụng kiến trúc `Serverless` và `Event-driven` trên `AWS`.
+Hệ thống sử dụng kiến trúc Serverless và Event-driven trên AWS.
 ![AWS Architecture](/images/2-Proposal/SnapResume.png)
 
-#### Tổng quan Kiến trúc
+### Tổng quan Kiến trúc
 
-- **Frontend**: `React 19` + `Vite` (hosting trên `S3` + `CloudFront` hoặc `AWS Amplify`).
-- **API Layer**: `Amazon API Gateway` + `AWS Lambda` (`Node.js`/`Express`).
-- **Database**: `Amazon DynamoDB` (Single Table Design) lưu trữ `User`, `Resume`, `Section`, `Template`.
-- **Authentication**: `Amazon Cognito` (User Pools & Identity Pools).
-- **AI Engine**: `Amazon Bedrock` (`Claude 3 Sonnet`) cho các tác vụ sinh nội dung.
-- **Storage**: `Amazon S3` để lưu trữ ảnh đại diện, tệp `PDF` đã xuất.
+- **Frontend**: React + Vite + Ant Design (hosting trên Amplify và tăng tốc với CloudFront).
+- **API Layer**: Amazon API Gateway + AWS Lambda (Node.js/TypeScript).
+- **Database**: Amazon DynamoDB lưu trữ User, Resume, Section, Template.
+- **Authentication**: Amazon Cognito (User Pools & Identity Pools).
+- **AI Engine**: Amazon Bedrock (Claude 3 Sonnet) cho các tác vụ phân tích và đề xuất.
+- **Storage**: Amazon S3 để lưu trữ ảnh đại diện, tệp PDF.
 
-### 4. Triển khai Kỹ thuật
+## 4. Triển khai Kỹ thuật
 
-#### Stack Công nghệ
+### Stack Công nghệ
 
-- **Frontend**: `ReactJS`, `TailwindCSS`, `Ant Design`, `html2pdf.js` cho việc xuất `PDF`.
-- **Backend**: `NodeJS`, `TypeScript`, `Express` (chạy trong `Lambda`).
-- **IaC**: `Terraform` để quản lý toàn bộ hạ tầng.
+- **Frontend**: ReactJS, Ant Design, CSS Modules, html2pdf.js cho việc xuất PDF.
+- **Backend**: NodeJS, TypeScript, Express (chạy trong Lambda).
+- **IaC**: Terraform để quản lý toàn bộ hạ tầng.
 
-#### Các Giai đoạn
+### Các Giai đoạn
 
-- **Giai đoạn 1: Core Foundation (Tháng 1)**
-  - Thiết lập hạ tầng `AWS` (`Terraform`).
-  - Xây dựng Authentication (`Cognito`).
-  - `CRUD` cơ bản cho Hồ sơ (`DynamoDB` + `Lambda`).
-- **Giai đoạn 2: Editor & Templates (Tháng 2)**
-  - Phát triển giao diện Editor kéo thả.
-  - Xây dựng hệ thống Template động.
-  - Tính năng xuất `PDF` (`html2pdf.js` / `Puppeteer`).
-- **Giai đoạn 3: AI Integration & Polish (Tháng 3)**
-  - Tích hợp `Amazon Bedrock` cho tính năng "AI Writer".
-  - Tối ưu hóa `UX`/`UI`.
-  - Kiểm thử tải và bảo mật.
+1.  **Giai đoạn 1: Core Foundation** (Đã hoàn thành)
+    - Thiết lập hạ tầng AWS (Terraform).
+    - Xây dựng Authentication (Cognito).
+    - CRUD cơ bản cho Hồ sơ & Sections (DynamoDB + Lambda).
+2.  **Giai đoạn 2: Editor & Templates** (Đã hoàn thành)
+    - Phát triển giao diện Editor Universal (Extension/Web).
+    - Xây dựng hệ thống Template động.
+    - Tính năng xuất PDF (html2pdf.js).
+3.  **Giai đoạn 3: AI Integration & Polish** (Đang thực hiện)
+    - Tích hợp Amazon Bedrock cho tính năng "AI Recommendation".
+    - Tối ưu hóa UX/UI (Features Page, Editor Flow).
+    - Extension Integration (Web Clipper flow).
 
-### 5. Ước tính Ngân sách (Chi phí AWS)
+## 5. Ước tính Ngân sách (Chi phí AWS)
 
-Mô hình định giá `Serverless` giúp chi phí tỉ lệ thuận với mức sử dụng. Chi phí AI (`Bedrock`) sẽ là yếu tố mới cần quan tâm so với các app truyền thống.
+Mô hình định giá Serverless giúp chi phí tỉ lệ thuận với mức sử dụng. Chi phí AI tập trung vào việc phân tích dữ liệu đầu vào lớn (Input Tokens).
 
-#### Giả định
+### Giả định về Chi phí AI (**AI Cost Assumptions**)
 
-- 1 Resume = 5 lần gọi AI (Tối ưu hóa, viết lại description).
-- 1 lần gọi AI = 1.000 input tokens + 500 output tokens.
-- Giá `Bedrock` (`Claude 3 Sonnet`): $3.00/1M input, $15.00/1M output.
-- Chi phí AI/Resume: ~ $0.05 (1.200 VND).
-- Dung lượng `PDF`: 2MB.
+Chi phí ước tính cho dịch vụ **Amazon Bedrock** (sử dụng model **Claude 3 Sonnet**) được tính toán dựa trên kịch bản sử dụng thực tế (**MVP**) như sau:
 
-| Dịch vụ                  | Mô hình Tính giá | Lưu lượng Thấp (MVP/Test) | Lưu lượng Trung bình    | Lưu lượng Cao            |
-| :----------------------- | :--------------- | :------------------------ | :---------------------- | :----------------------- |
-| **Quy mô**               |                  | **< 500 Users/tháng**     | **~ 5.000 Users/tháng** | **~ 50.000 Users/tháng** |
-| Số lượng Resume tạo ra   |                  | 200 CV                    | 2.000 CV                | 20.000 CV                |
-| Amazon S3                | Lưu trữ          | $0.10                     | $1.00                   | $15.00                   |
-| CloudFront               | CDN              | $0.50                     | $5.00                   | $50.00                   |
-| API GW + Lambda          | Compute          | Free Tier                 | $5.00                   | $40.00                   |
-| DynamoDB                 | Database         | Free Tier                 | $2.00                   | $20.00                   |
-| Cognito                  | Auth             | Free Tier                 | Free Tier               | Free Tier (< 50k MAU)    |
-| Amazon Bedrock (AI)      | Tokens           | $10.00                    | $100.00                 | $1.000.00                |
-| WAF + Route53            | Security         | $7.00                     | $7.00                   | $15.00                   |
-| **Tổng Chi phí / Tháng** |                  | **~ $18**                 | **~ $120**              | **~ $1.140**             |
+#### 1. Tần suất & Khối lượng sử dụng
 
-> Lưu ý: Chi phí AI (`Bedrock`) chiếm phần lớn khi quy mô tăng. Có thể tối ưu bằng cách sử dụng model nhỏ hơn (`Claude 3 Haiku`) cho các tác vụ đơn giản, giúp giảm chi phí AI xuống khoảng 1/5 (ví dụ: `Haiku` rẻ hơn `Sonnet` rất nhiều).
+- Tốc độ xử lý: Hệ thống xử lý trung bình 1 yêu cầu/phút (1 request/minute).
+- Thời gian hoạt động: Dự kiến hệ thống chịu tải cao hoặc được sử dụng tích cực trong 2 giờ/ngày (120 phút/ngày).
+- Tổng lưu lượng tháng: 120 yêu cầu/ngày x 30 ngày = 3.600 yêu cầu/tháng.
 
-### 6. Đánh giá Rủi ro
+#### 2. Kích thước Dữ liệu (**Token Size**) cho mỗi yêu cầu
 
-#### Rủi ro Bảo mật & Riêng tư (Cao)
+- Đầu vào (**Input Tokens**): Trung bình 500 tokens/yêu cầu.
+  - Bao gồm: Dữ liệu trích xuất từ CV hiện tại của người dùng và nội dung Mô tả công việc cần phân tích.
+- Đầu ra (**Output Tokens**): Trung bình 600 tokens/yêu cầu.
+  - Bao gồm: Kết quả phân tích, các gợi ý chỉnh sửa và dữ liệu trả về dưới dạng JSON có cấu trúc.
 
-- **Vấn đề**: CV chứa thông tin cá nhân nhạy cảm (`PII`) - SĐT, Email, Địa chỉ.
+#### 3. Đơn giá (**Pricing** - **Claude 3 Sonnet**)
+
+- Input: $0.003 / 1.000 tokens (tương đương $3.00 / 1 triệu tokens).
+- Output: $0.015 / 1.000 tokens (tương đương $15.00 / 1 triệu tokens).
+
+#### Chi tiết Tính toán Chi phí AI (AI Cost Breakdown)
+
+- Tổng lưu lượng tháng = Tốc độ xử lý _ Thời gian hoạt động _ 30 ngày
+- Chi phí Input tokens = Tổng lưu lượng \* $3 / 1 triệu tokens
+- Chi phí Output tokens = Tổng lưu lượng \* $15 / 1 triệu tokens
+- Chi phí Tổng = Chi phí Input tokens + Chi phí Output tokens
+
+##### Lưu lượng Thấp
+
+- Tốc độ xử lý: 1 yêu cầu/phút
+- Thời gian hoạt động: 2 giờ/ngày
+
+##### Lưu lượng Cao
+
+- Tốc độ xử lý: 2 yêu cầu/phút
+- Thời gian hoạt động: 3 giờ/ngày
+
+| Dịch vụ                  | Mô hình Tính phí | Lưu lượng Thấp | Lưu lượng Cao  |
+| :----------------------- | :--------------- | :------------- | :------------- |
+| Amazon S3                | Lưu trữ          | $0.28          | $0.77          |
+| CloudFront               | CDN              | Free Tier      | Free Tier      |
+| API GW + Lambda          | Tính toán        | Free Tier      | $2.80          |
+| DynamoDB                 | Cơ sở dữ liệu    | Free Tier      | $6.25          |
+| Cognito                  | Xác thực         | Free Tier      | Free Tier      |
+| Amazon Bedrock (AI)      | Tokens           | $37.8          | $113.4         |
+| WAF + Route53            | Bảo mật          | $12.60         | $12.60         |
+| **Tổng Chi phí / Tháng** |                  | **\~ $50.68**  | **\~ $135.82** |
+
+## 6. Đánh giá Rủi ro
+
+### Rủi ro Bảo mật & Riêng tư (Cao)
+
+- **Vấn đề**: Feature Recommendation yêu cầu gửi toàn bộ dữ liệu Sections của user lên Bedrock để phân tích.
 - **Giảm thiểu**:
-  - Mã hóa dữ liệu tại chỗ (`Encryption at rest`) trong `DynamoDB` và `S3`.
-  - Quyền truy cập nghiêm ngặt (`IAM Roles`).
-  - Không sử dụng dữ liệu người dùng để train AI (Mặc định `AWS Bedrock` không lưu dữ liệu train).
+  - AWS Bedrock tuân thủ quy định không sử dụng dữ liệu khách hàng để train base model.
+  - Mã hóa dữ liệu tại DynamoDB.
 
-#### Rủi ro Chi phí (Trung bình)
+### Rủi ro Chi phí (Trung bình)
 
-- **Vấn đề**: Tấn công `DDoS` vào `API` hoặc lạm dụng tính năng AI gây tốn kém.
+- **Vấn đề**: Người dùng spam nút "Recommend" với JD dài gây tốn token Input lớn.
 - **Giảm thiểu**:
-  - Thiết lập Throttling (giới hạn tốc độ) trên `API Gateway`.
-  - Giới hạn số lần gọi AI mỗi ngày cho mỗi tài khoản miễn phí.
-  - Đặt `AWS Budget Alerts` để cảnh báo khi chi phí vượt ngưỡng.
+  - Giới hạn độ dài Input của Job Description.
+  - Quota limits (Ví dụ: 10 lần phân tích/ngày cho tài khoản Free).
 
-#### Rủi ro Kiến trúc
+### Rủi ro Kiến trúc (Thấp)
 
-- **Vấn đề**: Cold start của `Lambda` làm chậm trải nghiệm người dùng lần đầu.
-- **Giảm thiểu**: Sử dụng `Lambda SnapStart` (cho `Java`) hoặc giữ ấm (`Provisioned Concurrency`) nếu cần thiết (tuy nhiên `Node.js` cold start thường khá nhanh).
+- **Vấn đề**: Cold start của Lambda làm chậm trải nghiệm người dùng lần đầu.
+- **Giảm thiểu**: Sử dụng Lambda SnapStart (cho Java) hoặc Provisioned Concurrency nếu cần thiết (tuy nhiên Node.js cold start thường khá nhanh).
 
-### 7. Kết quả Dự kiến
+## 7. Kết quả Dự kiến
 
-- Sở hữu một nền tảng `SaaS` hoàn chỉnh cho thị trường tuyển dụng.
-- Hệ thống có khả năng phục vụ hàng chục nghìn người dùng mà không cần quản lý máy chủ.
-- Tích hợp AI tạo lợi thế cạnh tranh rõ rệt so với các công cụ tạo CV truyền thống.
+- Sở hữu một nền tảng SaaS hoàn chỉnh cho thị trường tuyển dụng.
+- Giải quyết bài toán "Matching" giữa ứng viên và việc làm thay vì chỉ là công cụ soạn thảo văn bản thuần túy.
+- Tận dụng sức mạnh AI của AWS để tạo giá trị thực tế (Smart Search) thay vì các tính năng "viết hộ" chung chung.
+
+[Tài liệu đính kèm](https://drive.google.com/drive/folders/1zQJ8XC6bdMWveQYIaCO-RkHh9Ppy1WyE?usp=sharing)
